@@ -12,10 +12,10 @@ const Logo = () => {
     >
       <Link to={"/"}>
         <img
-          src=""
+          src="Echomind_Black.png"
           alt=""
-          width={"30px"}
-          height={"30px"}
+          width={"100px"}
+          height={"100px"}
           className="image-inverted"
         />
       </Link>{" "}

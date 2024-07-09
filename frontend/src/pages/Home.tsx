@@ -50,7 +50,7 @@ const Home = () => {
               margin: "auto",
               width: isBelowMd ? "80%" : "60%",
               borderRadius: 20,
-              boxShadow: "-5px -5px 105px #64f3d5",
+              boxShadow: "-5px -5px 105px #87CEFA",
               marginTop: 20,
               marginBottom: 20,
               padding: 10,

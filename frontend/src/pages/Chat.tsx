@@ -28,6 +28,9 @@ const Chat = () => {
     const newMessage: Message = { role: "user", content };
     setChatMessages((prev) => [...prev, newMessage]);
     const chatData = await sendChatRequest(content);
+    if (content) {
+      console.log("something went worng", content);
+    }
     setChatMessages([...chatData.chats]);
     //
   };
@@ -96,14 +99,14 @@ const Chat = () => {
               my: 2,
               bgcolor: "white",
               color: "black",
-              fontWeight: 700,
+              fontWeight: 700, //jugad
             }}
           >
             {auth?.user?.name[0]}
             {auth?.user?.name.split(" ")[1][0]}
           </Avatar>
           <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
-            You are talking to a ChatBOT
+            You are talking to Sara
           </Typography>
           <Typography sx={{ mx: "auto", fontFamily: "work sans", my: 4, p: 3 }}>
             You can ask some questions related to Knowledge, Business, Advices,
@@ -145,7 +148,7 @@ const Chat = () => {
             fontWeight: "600",
           }}
         >
-          Model - GPT 3.5 Turbo
+          Model - Echomind
         </Typography>
         <Box
           sx={{
@@ -162,7 +165,6 @@ const Chat = () => {
           }}
         >
           {chatMessages.map((chat, index) => (
-            //@ts-ignore
             <ChatItem content={chat.content} role={chat.role} key={index} />
           ))}
         </Box>

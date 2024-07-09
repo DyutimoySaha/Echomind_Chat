@@ -22,6 +22,8 @@ export const generateChatCompletion = async (
     chats.push({ content: message, role: "user" });
     user.chats.push({ content: message, role: "user" });
 
+    const finalMessage = chats.map((x) => x.content);
+    console.log("Problem", finalMessage);
     // send all chats with new one to openAI API
     const config = configureOpenAI();
     const openai = new OpenAIApi(config);
@@ -31,6 +33,7 @@ export const generateChatCompletion = async (
       messages: chats,
     });
     user.chats.push(chatResponse.data.choices[0].message);
+    console.log("chatresponse___", chatResponse);
     await user.save();
     return res.status(200).json({ chats: user.chats });
   } catch (error) {

@@ -13,10 +13,11 @@ const Footer = () => {
         }}
       >
         <p style={{ fontSize: "30px", textAlign: "center", padding: "20px" }}>
-          Built With love by
+          Built With love by &nbsp;
           <span>
-            <Link style={{ color: "white" }} className="nav-link" to={""}>
-              Echomind Team
+            Echomind
+            <Link style={{ color: "#87CEFA" }} className="nav-link" to={""}>
+              Team
             </Link>
           </span>
           💘
